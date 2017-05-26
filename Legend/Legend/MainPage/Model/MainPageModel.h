@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong)NSString   *goods_id;
 @property (nonatomic, strong)NSString   *goods_img;
-@property (nonatomic, strong)NSString   *is_endorse;
+@property (nonatomic, assign)BOOL       is_endorse;
 @property (nonatomic, strong)NSString   *banner_img;
 @property (nonatomic, strong)NSString   *target_url;
 

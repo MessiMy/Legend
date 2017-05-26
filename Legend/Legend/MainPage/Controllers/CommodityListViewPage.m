@@ -11,6 +11,7 @@
 #import "CommodityTableViewCell.h"
 #import "CommodityCollectionViewCell.h"
 #import "BannerView.h"
+#import "ProductDetailPage.h"
 
 @interface CommodityListViewPage ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,BannerViewDelegate>
 
@@ -145,6 +146,15 @@
 {
     CGSize size = CGSizeMake((DeviceMaxWidth - 15)/2, 261);
     return size;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProductDetailPage *productDetailPage = [[ProductDetailPage alloc] init];
+    productDetailPage.hidesBottomBarWhenPushed = YES;
+    GoodsModel *model = self.goodsArr[indexPath.row];
+    productDetailPage.goods_id = model.goods_id;
+    productDetailPage.is_endorse = [model.is_endorse integerValue];
+    [self.navigationController pushViewController:productDetailPage animated:YES];
 }
 #pragma mark - BannerViewDelegate
 - (void)BannerView:(BannerView *)bannerView didSelectBtton:(UIButton *)button

@@ -29,4 +29,10 @@
 + (BOOL)isPayPassword;
 + (void)detailPhone:(NSString *)phone;
 +(BOOL) isValidateMobile:(NSString *)mobile;
++(NSMutableAttributedString *)setFontColor:(UIColor *)color WithString:(NSString *)string WithRange:(NSRange)range;
++(CGFloat)getSpaceLabelHeight:(NSString*)string withFont:(UIFont*)font withWidth:(CGFloat)width withLineSpacing:(CGFloat)size;
++(NSMutableAttributedString *)setLineSpaceing:(NSInteger)size WithString:(NSString *)string WithRange:(NSRange)range;
++(NSString *)LongTimeToString:(NSString *)time withFormat:(NSString *)formatestr;
++ (void)fxViewAppear:(id)Img conStr:(NSString *)cStr withUrlStr:(NSString *)urlStr withTitilStr:(NSString *)titilStr withVc:(UIViewController *)fxVc isAdShare:(NSString *) adShareStatus;
+
 @end

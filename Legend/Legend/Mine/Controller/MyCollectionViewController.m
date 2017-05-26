@@ -47,8 +47,8 @@
     self.contentTable.showsHorizontalScrollIndicator = NO;
     
     [self.contentTable registerNib:[UINib nibWithNibName:@"GoodsTableViewCell" bundle:nil] forCellReuseIdentifier:@"GoodsTableViewCell"];
-    //[self.contentTable addHeaderWithTarget:self action:@selector(headerRefreshing)];
-   // [self.contentTable headerBeginRefreshing];
+    [self.contentTable addHeaderWithTarget:self action:@selector(headerRefreshing)];
+    [self.contentTable headerBeginRefreshing];
 }
 #pragma mark - refresh
 - (void)headerRefreshing
@@ -60,7 +60,7 @@
                                  @"last_collect_id":[NSNumber numberWithInteger:0]
                                  };
     [MainRequest RequestHTTPData:PATHShop(@"Api/GoodsCollect/getCollectList") parameters:parameters success:^(id response) {
-        //[self.contentTable headerEndRefreshing];
+        [self.contentTable headerEndRefreshing];
         NSArray *dataArr = [GoodsModel parseResponse:response];
         for (GoodsModel *model in [GoodsModel parseCollectResponse:response]) {
             [self.dataArr addObject:model];
@@ -77,7 +77,7 @@
         [self.contentTable reloadData];
     } failed:^(NSDictionary *errorDic) {
         [self showHUDWithResult:NO message:@"获取信息失败" completion:nil];
-        //[self.contentTable headerEndRefreshing];
+        [self.contentTable headerEndRefreshing];
     }];
 }
 - (void)sellerTableViewHeaderRefreshing
@@ -103,11 +103,11 @@
             self.switchView.hidden = NO;
             self.contentTable.hidden = NO;
         }
-        //[self.contentTable headerEndRefreshing];
+        [self.contentTable headerEndRefreshing];
         [self.contentTable reloadData];
     } failed:^(NSDictionary *errorDic) {
         [self showHUDWithResult:NO message:@"获取信息失败" completion:nil];
-        //[self.contentTable headerEndRefreshing];
+        [self.contentTable headerEndRefreshing];
     }];
 }
 #pragma  mark - UITableViewDelegate&&UITableViewDataSource
@@ -149,7 +149,7 @@
     {
         switchView.currentIndex = index;
     }
-    //[self.contentTable headerBeginRefreshing];
+    [self.contentTable headerBeginRefreshing];
 }
 
 @end
