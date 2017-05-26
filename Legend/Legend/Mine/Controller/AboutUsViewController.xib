@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuanshuo_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VWQ-ex-8ha">
+                    <rect key="frame" x="153" y="124" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Qzo-Va-fNK"/>
+                        <constraint firstAttribute="height" constant="70" id="xfM-2t-Ryn"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号:3.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-BD-dJJ">
+                    <rect key="frame" x="145.5" y="209" width="84" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="传说是一款智慧型的分享购物平台，旨在为优质，绿色的企业打开市场渠道，让每一个消费者都能参与到企业的推广中来，为企业打造有活力，有魅力的消费圈，实现有公信力，有影响力的分众自媒体，让分享更有价值，让生活更有智慧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ba-eQ-cAF">
+                    <rect key="frame" x="15" y="297" width="345" height="90"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CopyRight© 2015传说" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax7-8H-uPg">
+                    <rect key="frame" x="107" y="617" width="162" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ax7-8H-uPg" secondAttribute="height" multiplier="81:10" id="bCB-hd-irv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VWQ-ex-8ha" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="37f-av-ae5"/>
+                <constraint firstItem="kLR-BD-dJJ" firstAttribute="top" secondItem="VWQ-ex-8ha" secondAttribute="bottom" constant="15" id="4cA-38-jI0"/>
+                <constraint firstItem="VWQ-ex-8ha" firstAttribute="centerX" secondItem="4Ba-eQ-cAF" secondAttribute="centerX" id="6mB-zp-Y4D"/>
+                <constraint firstAttribute="bottom" secondItem="Ax7-8H-uPg" secondAttribute="bottom" constant="30" id="K1K-vh-Dni"/>
+                <constraint firstItem="VWQ-ex-8ha" firstAttribute="centerX" secondItem="kLR-BD-dJJ" secondAttribute="centerX" id="O2O-X5-FoN"/>
+                <constraint firstItem="VWQ-ex-8ha" firstAttribute="centerX" secondItem="Ax7-8H-uPg" secondAttribute="centerX" id="dMp-5E-zAd"/>
+                <constraint firstItem="4Ba-eQ-cAF" firstAttribute="top" secondItem="kLR-BD-dJJ" secondAttribute="bottom" constant="70" id="hRn-AX-98H"/>
+                <constraint firstItem="VWQ-ex-8ha" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="jQ2-9u-bjF"/>
+                <constraint firstItem="4Ba-eQ-cAF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="yks-Zm-DxS"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chuanshuo_logo" width="90" height="90"/>
+    </resources>
+</document>

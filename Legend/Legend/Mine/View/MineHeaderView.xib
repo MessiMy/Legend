@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MineHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg" translatesAutoresizingMaskIntoConstraints="NO" id="iut-Ao-NXh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pim-M1-6Bq">
+                    <rect key="frame" x="150" y="60" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Pim-M1-6Bq" secondAttribute="height" multiplier="1:1" id="53t-jK-632"/>
+                        <constraint firstAttribute="width" constant="75" id="8Gj-j6-jhz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登陆/注册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cse-AE-z4m">
+                    <rect key="frame" x="154" y="145" width="67" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSF-kc-U39">
+                    <rect key="frame" x="10" y="196" width="167" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJj-NO-Gs1">
+                    <rect key="frame" x="198" y="196" width="167" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rt-qw-Sjq">
+                    <rect key="frame" x="187" y="189" width="1" height="30"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZDN-d3-LIO"/>
+                        <constraint firstAttribute="width" constant="0.5" id="kag-FW-xC1"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7rt-qw-Sjq" firstAttribute="centerY" secondItem="mSF-kc-U39" secondAttribute="centerY" id="4QS-ou-dc9"/>
+                <constraint firstItem="cse-AE-z4m" firstAttribute="top" secondItem="iut-Ao-NXh" secondAttribute="bottom" constant="-89.333333333333343" id="650-Bu-xSQ"/>
+                <constraint firstItem="aJj-NO-Gs1" firstAttribute="leading" secondItem="iut-Ao-NXh" secondAttribute="trailing" constant="-177" id="CXY-vl-eeT"/>
+                <constraint firstAttribute="trailing" secondItem="iut-Ao-NXh" secondAttribute="trailing" id="DbR-73-81v"/>
+                <constraint firstItem="iut-Ao-NXh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fav-ax-OKS"/>
+                <constraint firstItem="iut-Ao-NXh" firstAttribute="top" secondItem="Pim-M1-6Bq" secondAttribute="bottom" constant="-134.66666666666666" id="LkV-nC-Ijf"/>
+                <constraint firstAttribute="bottom" secondItem="iut-Ao-NXh" secondAttribute="bottom" id="NhL-hf-0EH"/>
+                <constraint firstItem="Pim-M1-6Bq" firstAttribute="centerX" secondItem="iut-Ao-NXh" secondAttribute="centerX" id="OQT-rl-cBt"/>
+                <constraint firstItem="mSF-kc-U39" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Oee-W0-vut"/>
+                <constraint firstItem="7rt-qw-Sjq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="REL-mo-pWG"/>
+                <constraint firstItem="mSF-kc-U39" firstAttribute="top" secondItem="cse-AE-z4m" secondAttribute="bottom" constant="33" id="Ylj-AH-1NR"/>
+                <constraint firstItem="iut-Ao-NXh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dH7-fb-f6x"/>
+                <constraint firstItem="iut-Ao-NXh" firstAttribute="leading" secondItem="mSF-kc-U39" secondAttribute="trailing" constant="-177" id="deI-LI-wKB"/>
+                <constraint firstItem="cse-AE-z4m" firstAttribute="centerX" secondItem="Pim-M1-6Bq" secondAttribute="centerX" id="nmT-Ne-gmX"/>
+                <constraint firstItem="Pim-M1-6Bq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="pMh-gq-fIN"/>
+                <constraint firstAttribute="trailing" secondItem="aJj-NO-Gs1" secondAttribute="trailing" constant="10" id="xAD-Vi-If0"/>
+                <constraint firstItem="aJj-NO-Gs1" firstAttribute="baseline" secondItem="mSF-kc-U39" secondAttribute="baseline" id="y2z-P4-Ahl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avatarImageView" destination="Pim-M1-6Bq" id="ET5-56-lEI"/>
+                <outlet property="leftLab" destination="mSF-kc-U39" id="Q51-hI-KIK"/>
+                <outlet property="line" destination="7rt-qw-Sjq" id="LTj-52-DDG"/>
+                <outlet property="nameLab" destination="cse-AE-z4m" id="Smp-ib-yqK"/>
+                <outlet property="rightLab" destination="aJj-NO-Gs1" id="Eha-Wp-eFW"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="-171"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mine_bg" width="414" height="259"/>
+    </resources>
+</document>

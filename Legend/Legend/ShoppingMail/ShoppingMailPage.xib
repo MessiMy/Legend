@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShoppingMailPage">
+            <connections>
+                <outlet property="contentCollectionView" destination="Swv-R8-ivn" id="DO7-dm-Dav"/>
+                <outlet property="shoppingMailTableView" destination="cPQ-ZM-kWi" id="raK-VM-81d"/>
+                <outlet property="view" destination="Ijm-QF-UUa" id="Xj4-xv-uE1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ijm-QF-UUa">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-ZM-kWi">
+                    <rect key="frame" x="0.0" y="0.0" width="94" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="94" id="1fd-eZ-tPB"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="r2o-9M-Ecz"/>
+                        <outlet property="delegate" destination="-1" id="feV-7y-aL0"/>
+                    </connections>
+                </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Swv-R8-ivn">
+                    <rect key="frame" x="93" y="64" width="282" height="554"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2.5" id="qqo-Es-l20">
+                        <size key="itemSize" width="100" height="50"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NlM-g3-6Wh"/>
+                        <outlet property="delegate" destination="-1" id="NYh-38-bbP"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="cPQ-ZM-kWi" secondAttribute="bottom" id="F0c-Fo-K28"/>
+                <constraint firstItem="cPQ-ZM-kWi" firstAttribute="top" secondItem="Ijm-QF-UUa" secondAttribute="top" id="MbJ-W8-ggI"/>
+                <constraint firstItem="Swv-R8-ivn" firstAttribute="leading" secondItem="Ijm-QF-UUa" secondAttribute="leading" constant="93" id="WVu-Jm-nXN"/>
+                <constraint firstAttribute="trailing" secondItem="Swv-R8-ivn" secondAttribute="trailing" id="lwn-PZ-pj4"/>
+                <constraint firstItem="Swv-R8-ivn" firstAttribute="top" secondItem="Ijm-QF-UUa" secondAttribute="top" constant="64" id="p0q-TY-8tV"/>
+                <constraint firstItem="cPQ-ZM-kWi" firstAttribute="leading" secondItem="Ijm-QF-UUa" secondAttribute="leading" id="w7y-4R-K9h"/>
+                <constraint firstAttribute="bottom" secondItem="Swv-R8-ivn" secondAttribute="bottom" constant="49" id="wcQ-2o-Qql"/>
+            </constraints>
+            <point key="canvasLocation" x="8.5" y="32.5"/>
+        </view>
+    </objects>
+</document>
