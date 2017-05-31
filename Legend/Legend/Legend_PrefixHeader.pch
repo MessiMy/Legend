@@ -22,5 +22,6 @@
 #import "UIFont+Theme.h"
 #import "MJRefresh.h"
 #import "WZLBadgeImport.h"
+#import "SDCycleScrollView.h"
 
 #endif /* Legend_PrefixHeader_pch */

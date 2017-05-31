@@ -7,6 +7,7 @@
 //
 
 #import "ShoppingCar.h"
+#import "AppDelegate.h"
 
 @interface ShoppingCar ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -35,13 +36,20 @@
 {
     [super viewWillAppear:animated];
     self.emptyView.hidden = self.goodsArr.count > 0;
-    //self.tableView.hidden = !(self.goodsArr.count > 0);
+    self.tableView.hidden = !(self.goodsArr.count > 0);
 }
 - (void)editBtnClicked
 {
     
 }
-- (IBAction)buyBtnClicked:(UIButton *)sender {
+- (IBAction)buyBtnClicked:(UIButton *)sender
+{
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    UITabBarController *rootVC = (UITabBarController *)app.window.rootViewController;
+    NSInteger gotoIndex = 0;
+    UINavigationController *nav = [rootVC.viewControllers objectAtIndex:gotoIndex];
+    [nav popToRootViewControllerAnimated:NO];
+    rootVC.selectedIndex = gotoIndex;
 }
 #pragma mark - UITableViewDelegate&&UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

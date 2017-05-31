@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "MyCustomButton.h"
+//#import <ShareSDKUI/ShareSDK+SSUI.h>
 
 
 
@@ -217,5 +218,41 @@ UIWebView *phoneCallWebView;
         grayV.alpha = 1;
         fxView.frame = CGRectMake(0, DeviceMaxHeight-140*widthRate-64, DeviceMaxWidth, 140*widthRate);
     }];
+}
+#pragma mark - hide fxView
+- (void)fxViewDisAppear
+{
+    UIView  *grayV = [tempFxVc.view viewWithTag:fxBgViewTag];
+    UIView  *fxView = [tempFxVc.view viewWithTag:fxLowViewTag];
+    [UIView animateWithDuration:0.2 animations:^{
+        grayV.alpha = 0;
+        fxView.frame = CGRectMake(0, DeviceMaxHeight, DeviceMaxWidth, 135*widthRate);
+        
+    }completion:^(BOOL finished) {
+        [grayV removeFromSuperview];
+        [fxView removeFromSuperview];
+    }];
+}
+#pragma mark - share
+- (void)fxBtnEvent:(UIButton *)button
+{
+//    [[MyTools sharedInstance] fxViewDisAppear];
+//    SSDKPlatformType type;
+//    switch (button.tag) {
+//        case 0://微信好友
+//            type = SSDKPlatformSubTypeWechatSession;
+//            break;
+//        case 1://QQ好友
+//            type = SSDKPlatformSubTypeQQFriend;
+//            break;
+//        case 2://短信
+//            type = SSDKPlatformTypeSMS;
+//        default:
+//            break;
+//    }
+}
+- (void)saveSuceess
+{
+    
 }
 @end
