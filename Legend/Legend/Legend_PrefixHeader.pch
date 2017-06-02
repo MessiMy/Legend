@@ -23,5 +23,7 @@
 #import "MJRefresh.h"
 #import "WZLBadgeImport.h"
 #import "SDCycleScrollView.h"
+#import "UIImageView+WebCache.h"
+#import "SellerModel.h"
 
 #endif /* Legend_PrefixHeader_pch */

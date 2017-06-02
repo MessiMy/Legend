@@ -11,6 +11,7 @@
 #import "MKAnnotationView+WebCache.h"
 #import "UIImageView+WebCache.h"
 #import "AppDelegate.h"
+#import "ProductPropertySelectView.h"
 
 @interface ProductDetailPage ()
 
@@ -115,7 +116,32 @@
 #pragma mark - 加入购物车按钮按下
 - (void)joinShopCarBtnClicked
 {
+    [[ProductPropertySelectView getInstanceWithNib] showWithProudctID:self.currentModel withCheck:YES selectBuy:^(ProducrModel *model) {
+        if ([MyTools loginIsOrNot:self]) {
+            [self addGWCEvent:model];
+        }
+    }];
     //ProductAttributionModel *selectAttModel = modf(<#double#>, <#double *#>)
+}
+- (void)addGWCEvent:(ProducrModel *)model
+{
+    ProductAttributionModel *selectAttModel = model.selectProperty[0];
+    NSDictionary *parameters = @{@"token":[MyTools getUserToken],
+                                 @"device_id":[MyTools getDeviceUUID],
+                                 @"goods_id":[NSString stringWithFormat:@"%@",_currentModel.goods_id],
+                                 @"seller_id":[NSString stringWithFormat:@"%@",_currentModel.seller_id],
+                                 @"goods_number":model.selectNum,
+                                 @"goods_price":[NSString stringWithFormat:@"%f",[selectAttModel.price floatValue] * [model.selectNum intValue]],
+                                 @"attr_id":selectAttModel.attr_id
+                                 };
+    [self showHUDWithMessage:nil];
+    [MainRequest RequestHTTPData:PATHShop(@"api/ShoppingCart/addShoppingCart") parameters:parameters success:^(id response) {
+        [self showHUDWithResult:YES message:@"添加成功，在购物车中等你哟" completion:nil];
+        self.buyNumber++;
+        [_gwcBtn showBadgeWithStyle:WBadgeStyleNumber value:self.buyNumber animationType:WBadgeAnimTypeNone];
+    } failed:^(NSDictionary *errorDic) {
+        [self showHUDWithResult:NO message:@"添加失败，请检查您的网络" completion:nil];
+    }];
 }
 #pragma mark - 直推按钮按下
 - (void)ztBtnClicked

@@ -8,6 +8,16 @@
 
 #import "BaseViewController.h"
 
+@class SearchGoodsViewController;
+@protocol SearchGoodsResultDelegate <NSObject>
+
+- (void)searchGoodsViewController:(SearchGoodsViewController *)searchVC didSearchText:(NSString *)text;
+
+@end
+
 @interface SearchGoodsViewController : BaseViewController
+
+@property (nonatomic, strong)NSString   *searchText;
+@property (nonatomic, weak)id<SearchGoodsResultDelegate>delegate;
 
 @end

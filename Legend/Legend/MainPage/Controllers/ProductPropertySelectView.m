@@ -252,9 +252,54 @@
         _BuyButton.backgroundColor = mainColor;
     }
 }
-- (void)selectProperty:(UIButton *)button
+- (void)checkSelectStatus:(PropertyButton *)button
 {
-    
+    NSArray *views = _scrollContentView.subviews;
+    for (UIView *view in views) {
+        if ([view isKindOfClass:[PropertyButton class]] && ![button isEqual:view]) {
+            PropertyButton *temp = (PropertyButton *)view;
+            if (view != button) {
+                if (temp.selected) {
+                    temp.selected = NO;
+                }
+            }
+        }
+    }
+    if (button.selected) {
+        ProductAttributionModel *attrModel = button.model;
+        if ([_currentModel.selectNum intValue] > [attrModel.goods_number intValue]) {
+            _currentModel.selectNum = [NSString stringWithFormat:@"%@",attrModel.goods_number];
+        }
+        else if ([_currentModel.selectNum intValue] == 0 && [attrModel.goods_number intValue] > 0)
+        {
+            _currentModel.selectNum = @"1";
+        }
+        self.prountNumLab.text = [NSString stringWithFormat:@"%d",[_currentModel.selectNum intValue]];
+        _TitleLab.text = [NSString stringWithFormat:@"¥%0.2f",[attrModel.price floatValue] * [_prountNumLab.text intValue]];
+        _PriceLab.text = [NSString stringWithFormat:@"库存：%@",attrModel.goods_number];
+        
+    }
+    if ([_currentModel.selectNum intValue] <= 0) {
+        _BuyButton.enabled = NO;
+        _BuyButton.backgroundColor = buttonGrayColor;
+    }
+    else
+    {
+        _BuyButton.enabled = YES;
+        _BuyButton.backgroundColor = mainColor;
+    }
+}
+- (void)selectProperty:(PropertyButton *)button
+{
+    button.selected = !button.selected;
+    [self checkSelectStatus:button];
+    if (button.selected) {
+        self.selecModel = button.model;
+    }
+    else
+    {
+        self.selecModel = nil;
+    }
 }
 - (void)showWithProudctID:(ProducrModel *)model withCheck:(BOOL)isCarShop selectBuy:(ProductPropertySelectBuyBlock)block
 {
@@ -270,5 +315,47 @@
         [self.BuyButton setTitle:@"立即购买" forState:UIControlStateNormal];
     }
     [self setUI];
+    
+    UIView *view = [[UIApplication sharedApplication].delegate window];
+    [view addSubview:self];
+    [_contentView layoutIfNeeded];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        _contentBottom.constant = 0;
+        [_contentView layoutIfNeeded];
+    }];
+}
+- (void)dismiss
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        _contentBottom.constant = -440;
+        [_contentView layoutIfNeeded];
+    }completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
+}
+- (IBAction)buyBtnClicked:(UIButton *)sender
+{
+    if ([self checkAllSelect]) {
+        if (self.buyBlock) {
+            if (self.selecModel) {
+                _currentModel.selectProperty = @[self.selecModel];
+                _currentModel.attr_id = self.selecModel.attr_id;
+            }
+            self.buyBlock(_currentModel);
+        }
+        [self dismiss];
+    }
+}
+- (IBAction)cancleBtn:(id)sender
+{
+    [self dismiss];
+}
+- (BOOL)checkAllSelect
+{
+    if (_currentModel.attr_list && _currentModel.attr_list.count > 0 && !self.selecModel) {
+        return NO;
+    }
+    return YES;
 }
 @end

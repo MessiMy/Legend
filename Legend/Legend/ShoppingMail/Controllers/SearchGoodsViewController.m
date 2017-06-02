@@ -10,10 +10,13 @@
 #import "MyLayout.h"
 #import "HotSearchCollectionViewCell.h"
 #import "CollectionTitleHeaderView.h"
+#import "hotWordsModel.h"
 
-@interface SearchGoodsViewController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
+@interface SearchGoodsViewController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic,weak) UITableView      *tableView;
+//@property (nonatomic,weak) UITableView      *tableView;
+@property (nonatomic, strong)NSArray        *hotWords;
+@property (nonatomic, strong)NSArray        *searchHis;
 @property (nonatomic,weak) NSMutableArray   *dataArray;
 @property (nonatomic,weak) UISearchBar      *searchBar;
 @property (nonatomic,weak) UICollectionView *headerView;
@@ -107,7 +110,7 @@
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:myLayout];
     self.collectionView = collectionView;
     self.collectionView.hidden = YES;
-    self.collectionView.backgroundColor = [UIColor greenColor];
+    self.collectionView.backgroundColor = [UIColor redColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 0);
@@ -115,22 +118,34 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"HotSearchCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HotSearchCollectionViewCell"];
     [self.view addSubview:self.collectionView];
 }
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.tableView.frame = self.view.bounds;
+    self.collectionView.frame = self.view.bounds;
+}
 #pragma mark - 加载数据
 -(void)loadData
 {
-    [self updataUI];
+    [self showHUDWithMessage:nil];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [self updataUI];
+    });
+    NSDictionary *parameter = @{@"device_id":[MyTools getDeviceUUID]};
+    [MainRequest RequestHTTPData:PATHShop(@"Api/Goods/getHotSearch") parameters:parameter success:^(id response) {
+        self.hotWords = [HotWordsModel paraseResponse:response];
+        [self updataUI];
+        [self hideHUD];
+    } failed:^(NSDictionary *errorDic) {
+        [self hideHUD];
+    }];
 }
 -(void)updataUI
 {
-    if (self.dataArray.count!=0) {
-        self.tableView.hidden = NO;
-        self.collectionView.hidden = YES;
-    }
-    else
-    {
-        self.tableView.hidden = YES;
-        self.collectionView.hidden = NO;
-    }
+    self.navigationItem.rightBarButtonItem.enabled = self.searchBar.text.length > 0;
+    self.tableView.hidden = self.searchHis.count == 0;
+    self.collectionView.hidden = self.searchHis.count != 0;
+    
     [self.tableView reloadData];
     [self.headerView reloadData];
     [self.collectionView reloadData];
@@ -220,18 +235,26 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5;
+    return self.hotWords.count;
 }
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     CollectionTitleHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CollectionTitleHeaderView" forIndexPath:indexPath];
+    header.backgroundColor = [UIColor blackColor];
     return header;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HotSearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HotSearchCollectionViewCell" forIndexPath:indexPath];
-    cell.hotWord.text = [NSString stringWithFormat:@"%ld",indexPath.row];
-    
+    HotWordsModel *model = [self.hotWords objectAtIndex:indexPath.row];
+    cell.hotWord.text = model.name;
     return cell;
+}
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    HotWordsModel *model = [self.hotWords objectAtIndex:indexPath.row];
+    CGRect bounds = [model.name boundingRectWithSize:CGSizeMake(self.view.bounds.size.width - 2*10, 10) options:NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName :[UIFont bodyTextFont]} context:nil];
+    return CGSizeMake(bounds.size.width + 20, 25);
 }
 @end
