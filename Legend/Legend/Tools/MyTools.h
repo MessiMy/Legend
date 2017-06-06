@@ -34,5 +34,5 @@
 +(NSMutableAttributedString *)setLineSpaceing:(NSInteger)size WithString:(NSString *)string WithRange:(NSRange)range;
 +(NSString *)LongTimeToString:(NSString *)time withFormat:(NSString *)formatestr;
 + (void)fxViewAppear:(id)Img conStr:(NSString *)cStr withUrlStr:(NSString *)urlStr withTitilStr:(NSString *)titilStr withVc:(UIViewController *)fxVc isAdShare:(NSString *) adShareStatus;
-
++ (NSString *)distanceTimeWithBeforeTime:(double)beTime;
 @end

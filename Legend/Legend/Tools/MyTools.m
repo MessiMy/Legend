@@ -255,4 +255,60 @@ UIWebView *phoneCallWebView;
 {
     
 }
++ (NSString *)distanceTimeWithBeforeTime:(double)beTime
+{
+    NSTimeInterval now = [[NSDate date]timeIntervalSince1970];
+    double distanceTime = now - beTime;
+    NSString * distanceStr;
+    
+    NSDate * beDate = nil;
+    NSString *beTimeStr = [NSString stringWithFormat:@"%.0f",beTime];
+    if (beTimeStr.length == 10) { //10位
+        beDate = [NSDate dateWithTimeIntervalSince1970:[beTimeStr doubleValue]];
+    }else //13位
+    {
+        beDate = [NSDate dateWithTimeIntervalSince1970:[beTimeStr longLongValue]/1000];
+    }
+    [NSDate dateWithTimeIntervalSince1970:beTime/1000];
+    NSDateFormatter * df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"HH:mm"];
+    //    NSString * timeStr = [df stringFromDate:beDate];
+    
+    [df setDateFormat:@"dd"];
+    NSString * nowDay = [df stringFromDate:[NSDate date]];
+    NSString * lastDay = [df stringFromDate:beDate];
+    
+    if (distanceTime < 60) {//小于一分钟
+        distanceStr = @"刚刚";
+    }
+    else if (distanceTime < 60*60) {//时间小于一个小时
+        distanceStr = [NSString stringWithFormat:@"%ld分钟前",(long)distanceTime/60];
+    }
+    else if(distanceTime < 24*60*60 && [nowDay integerValue] == [lastDay integerValue]){//时间小于一天
+        //        distanceStr = [NSString stringWithFormat:@"今天 %@",timeStr];
+        distanceStr = [NSString stringWithFormat:@"今天"];
+    }
+    else if(distanceTime< 24*60*60*2 && [nowDay integerValue] != [lastDay integerValue]){//时间小于两天
+        
+        if ([nowDay integerValue] - [lastDay integerValue] == 1 || ([lastDay integerValue] - [nowDay integerValue] > 10 && [nowDay integerValue] == 1)) {
+            //            distanceStr = [NSString stringWithFormat:@"昨天 %@",timeStr];
+            distanceStr = [NSString stringWithFormat:@"昨天"];
+        }
+        else{
+            //            [df setDateFormat:@"MM-dd HH:mm"];
+            [df setDateFormat:@"yyyy-MM-dd"];
+            distanceStr = [df stringFromDate:beDate];
+        }
+        
+    }
+    else if(distanceTime < 24*60*60*365){
+        [df setDateFormat:@"yyyy-MM-dd"];
+        distanceStr = [df stringFromDate:beDate];
+    }
+    else{
+        [df setDateFormat:@"yyyy-MM-dd"];
+        distanceStr = [df stringFromDate:beDate];
+    }
+    return distanceStr;
+}
 @end

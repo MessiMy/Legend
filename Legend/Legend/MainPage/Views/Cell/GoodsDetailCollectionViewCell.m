@@ -14,6 +14,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //设置cell
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+        self.layer.shadowOffset = CGSizeMake(0, 1);
+        self.layer.shadowRadius = 1;
         //产品图片
         _productImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 180*widthRate)];
         [_productImg setImage:[UIImage imageNamed:@"a5.jpg"]];
@@ -34,7 +39,7 @@
         //产品价格
         _price = [UILabel new];
         _price.text = @"¥593.00";
-        _price.textColor = [UIColor blackColor];
+        _price.textColor = [UIColor redColor];
         _price.font = [UIFont systemFontOfSize:16];
         _price.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_price];

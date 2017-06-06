@@ -32,9 +32,11 @@
 
 -(void)systemNoticeBtn:(UIButton *)button
 {
-    NotificationViewController *notificationVC = [[NotificationViewController alloc] init];
-    notificationVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:notificationVC animated:YES];
+    if ([MyTools loginIsOrNot:self]) {
+        NotificationViewController *notificationVC = [[NotificationViewController alloc] init];
+        notificationVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:notificationVC animated:YES];
+    }
 }
 #pragma mark - UISearchBarDelegate
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar

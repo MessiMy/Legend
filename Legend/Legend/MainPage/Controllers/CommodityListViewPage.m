@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor backgroundColor];
     self.searchBar.text = self.goodsName;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"changeStyleTableView"] style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked:)];
@@ -36,7 +37,7 @@
     self.commodityTableView.scrollsToTop = YES;
     self.commodityTableView.tableFooterView = [UIView new];
     self.commodityTableView.backgroundColor = [UIColor clearColor];
-    self.commodityTableView.separatorColor = [UIColor grayColor];
+    self.commodityTableView.separatorColor = [UIColor seperateColor];
     [self.commodityTableView registerNib:[UINib nibWithNibName:@"CommodityTableViewCell" bundle:nil] forCellReuseIdentifier:@"CommodityTableViewCell"];
     self.commodityTableView.rowHeight = 108;
     
@@ -137,8 +138,16 @@
     GoodsModel *model = self.goodsArr[indexPath.row];
     CommodityCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CommodityCollectionViewCell" forIndexPath:indexPath];
     [cell.goodsImg setImageWithURL:[NSURL URLWithString:model.goods_thumb]];
+    NSString *price = [NSString stringWithFormat:@"%.2f",[model.shop_price floatValue]];
+    NSString *priceStr = [NSString stringWithFormat:@"¥%@",price];
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:priceStr];
+    [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10] range:NSMakeRange(0, 1)];
+    [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10] range:NSMakeRange(priceStr.length-2, 2)];
     cell.goodsName.text = model.goods_name;
-    cell.goodsPrice.text = [NSString stringWithFormat:@"¥%@",model.shop_price];
+    cell.goodsPrice.attributedText = attrStr;
+    cell.delegateLab.text = @"可代言商品";
+    cell.delegateLab.hidden = [model.is_endorse boolValue] != YES;
+    
     
     return cell;
 }
@@ -147,6 +156,7 @@
     CGSize size = CGSizeMake((DeviceMaxWidth - 15)/2, 261);
     return size;
 }
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductDetailPage *productDetailPage = [[ProductDetailPage alloc] init];

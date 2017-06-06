@@ -189,6 +189,7 @@
 		0F84CBE91EBC405B00B8CD12 /* CommodityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F84CBE71EBC405B00B8CD12 /* CommodityTableViewCell.xib */; };
 		0F84CBED1EBC420D00B8CD12 /* CommodityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84CBEB1EBC420D00B8CD12 /* CommodityCollectionViewCell.m */; };
 		0F84CBEE1EBC420D00B8CD12 /* CommodityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F84CBEC1EBC420D00B8CD12 /* CommodityCollectionViewCell.xib */; };
+		0F8578171EE540D800C71832 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8578161EE540D800C71832 /* MessageModel.m */; };
 		0F9438B61ED7BEAB0093B1F2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9438B51ED7BEAB0093B1F2 /* MessageUI.framework */; };
 		0F9438BA1ED7BEE60093B1F2 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9438B91ED7BEE60093B1F2 /* libstdc++.tbd */; };
 		0F9438CE1ED7C8B20093B1F2 /* loadding_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F9438BE1ED7C8B20093B1F2 /* loadding_arrow@2x.png */; };
@@ -561,6 +562,8 @@
 		0F84CBEA1EBC420D00B8CD12 /* CommodityCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityCollectionViewCell.h; sourceTree = "<group>"; };
 		0F84CBEB1EBC420D00B8CD12 /* CommodityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityCollectionViewCell.m; sourceTree = "<group>"; };
 		0F84CBEC1EBC420D00B8CD12 /* CommodityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommodityCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F8578151EE540D800C71832 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		0F8578161EE540D800C71832 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		0F9438B51ED7BEAB0093B1F2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0F9438B71ED7BECD0093B1F2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		0F9438B91ED7BEE60093B1F2 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -667,6 +670,8 @@
 				0F84CBE21EBC0F8200B8CD12 /* GoodsAttrModel.m */,
 				0F7D26FA1EC2DDBC0024284F /* ProducrModel.h */,
 				0F7D26FB1EC2DDBC0024284F /* ProducrModel.m */,
+				0F8578151EE540D800C71832 /* MessageModel.h */,
+				0F8578161EE540D800C71832 /* MessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1746,6 +1751,7 @@
 				0F32272E1E8A5C36009D4B91 /* NSObject+PortEncry.m in Sources */,
 				0F7F55EB1EE154D800A8F786 /* SearchHisModel.m in Sources */,
 				0F8212071E88B7FA00F91A34 /* AFHTTPRequestOperation.m in Sources */,
+				0F8578171EE540D800C71832 /* MessageModel.m in Sources */,
 				0F7AE71E1EB9687C00B5C4A7 /* MKAnnotationView+WebCache.m in Sources */,
 				0F96BFE91E823E0100AC22DF /* HomeViewController.m in Sources */,
 				0F8212181E88B7FA00F91A34 /* UIWebView+AFNetworking.m in Sources */,
