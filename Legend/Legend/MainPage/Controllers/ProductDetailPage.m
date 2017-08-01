@@ -40,6 +40,7 @@
     [super viewDidLoad];
     self.title = @"商品详情";
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame = CGRectMake(DeviceMaxWidth-35, 20, 30, 44);
     [rightBtn setImage:imageWithName(@"home_collection_no") forState:UIControlStateNormal];
@@ -49,7 +50,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, DeviceMaxWidth, DeviceMaxHeight - 50)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, DeviceMaxWidth, DeviceMaxHeight - 50-64)];
     scrollView.backgroundColor = viewColor;
     scrollView.showsVerticalScrollIndicator = NO;
     self.mainScrollView = scrollView;

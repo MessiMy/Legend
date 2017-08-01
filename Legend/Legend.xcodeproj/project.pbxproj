@@ -31,6 +31,7 @@
 		0F32274F1E8A5F10009D4B91 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3227421E8A5F10009D4B91 /* NSObject+MJKeyValue.m */; };
 		0F3227501E8A5F10009D4B91 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3227441E8A5F10009D4B91 /* NSObject+MJProperty.m */; };
 		0F3227511E8A5F10009D4B91 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3227461E8A5F10009D4B91 /* NSString+MJExtension.m */; };
+		0F38487C1F302FA3002FFDED /* NewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F38487B1F302FA3002FFDED /* NewerViewController.m */; };
 		0F3A6ED71E84EC9D003D9592 /* UISearchBar+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A6ED61E84EC9D003D9592 /* UISearchBar+Custom.m */; };
 		0F3A6EDA1E84ECDF003D9592 /* NSString+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A6ED91E84ECDF003D9592 /* NSString+Formatter.m */; };
 		0F3A6EE31E84FF73003D9592 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A6EE21E84FF73003D9592 /* LoginViewController.m */; };
@@ -273,6 +274,8 @@
 		0F3227441E8A5F10009D4B91 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		0F3227451E8A5F10009D4B91 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		0F3227461E8A5F10009D4B91 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		0F38487A1F302FA3002FFDED /* NewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewerViewController.h; sourceTree = "<group>"; };
+		0F38487B1F302FA3002FFDED /* NewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewerViewController.m; sourceTree = "<group>"; };
 		0F3A6ED51E84EC9D003D9592 /* UISearchBar+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Custom.h"; sourceTree = "<group>"; };
 		0F3A6ED61E84EC9D003D9592 /* UISearchBar+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+Custom.m"; sourceTree = "<group>"; };
 		0F3A6ED81E84ECDF003D9592 /* NSString+Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Formatter.h"; sourceTree = "<group>"; };
@@ -747,6 +750,8 @@
 				0F8423941EDEA65600ED09FC /* ProductPropertySelectView.h */,
 				0F8423951EDEA65600ED09FC /* ProductPropertySelectView.m */,
 				0F8423971EDEA6FD00ED09FC /* ProductPropertySelectView.xib */,
+				0F38487A1F302FA3002FFDED /* NewerViewController.h */,
+				0F38487B1F302FA3002FFDED /* NewerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1703,6 +1708,7 @@
 				0F8495B21ECD6EF500236AE4 /* SettingViewController.m in Sources */,
 				0F82170F1EDFDF85007359B8 /* ShoppingCarBottomView.m in Sources */,
 				0F3A6EE31E84FF73003D9592 /* LoginViewController.m in Sources */,
+				0F38487C1F302FA3002FFDED /* NewerViewController.m in Sources */,
 				0F7D26FF1EC2ECAD0024284F /* ToCardMemberHeaderView.m in Sources */,
 				0F7AE7211EB9687C00B5C4A7 /* SDImageCache.m in Sources */,
 				0F82120B1E88B7FA00F91A34 /* AFSecurityPolicy.m in Sources */,
@@ -1842,7 +1848,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -1886,7 +1892,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;

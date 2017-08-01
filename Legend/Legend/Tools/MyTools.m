@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "MyCustomButton.h"
+
 //#import <ShareSDKUI/ShareSDK+SSUI.h>
 
 
@@ -216,7 +217,7 @@ UIWebView *phoneCallWebView;
     
     [UIView animateWithDuration:0.2 animations:^{
         grayV.alpha = 1;
-        fxView.frame = CGRectMake(0, DeviceMaxHeight-140*widthRate-64, DeviceMaxWidth, 140*widthRate);
+        fxView.frame = CGRectMake(0, DeviceMaxHeight-140*widthRate, DeviceMaxWidth, 140*widthRate);
     }];
 }
 #pragma mark - hide fxView
@@ -236,7 +237,7 @@ UIWebView *phoneCallWebView;
 #pragma mark - share
 - (void)fxBtnEvent:(UIButton *)button
 {
-//    [[MyTools sharedInstance] fxViewDisAppear];
+    //[[MyTools sharedInstance] fxViewDisAppear];
 //    SSDKPlatformType type;
 //    switch (button.tag) {
 //        case 0://微信好友
