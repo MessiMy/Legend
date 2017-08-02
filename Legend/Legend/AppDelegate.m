@@ -8,7 +8,13 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
-
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
+////腾讯开放平台（对应QQ和QQ空间）SDK头文件
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
+////微信SDK头文件
+//#import "WXApi.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +23,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //注册分享
+    //[self initShare];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -53,6 +62,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+#pragma mark - 初始化分享
+- (void)initShare
+{
+//    [ShareSDK registerActivePlatforms:@[@(SSDKPlatformTypeSMS),
+//                                        @(SSDKPlatformTypeWechat),
+//                                        @(SSDKPlatformTypeQQ)]
+//                             onImport:^(SSDKPlatformType platformType) {
+//                                 switch (platformType) {
+//                                     case SSDKPlatformTypeWechat:
+//                                         [ShareSDKConnector connectWeChat:[WXApi class]];
+//                                         break;
+//                                     case SSDKPlatformTypeSMS:
+//                                         
+//                                         break;
+//                                     case SSDKPlatformTypeQQ:
+//                                         [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+//                                         break;
+//                                     default:
+//                                         break;
+//                                 }
+//                             } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+//                                 switch (platformType) {
+//                                     case SSDKPlatformTypeWechat:
+//                                         
+//                                         break;
+//                                         
+//                                     default:
+//                                         break;
+//                                 }
+//                             }];
+}
 
 @end

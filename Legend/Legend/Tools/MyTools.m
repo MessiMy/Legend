@@ -11,8 +11,10 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "MyCustomButton.h"
 
+//#import <ShareSDK/ShareSDK.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
 //#import <ShareSDKUI/ShareSDK+SSUI.h>
-
+//#import "WXApi.h"
 
 
 
@@ -237,7 +239,7 @@ UIWebView *phoneCallWebView;
 #pragma mark - share
 - (void)fxBtnEvent:(UIButton *)button
 {
-    //[[MyTools sharedInstance] fxViewDisAppear];
+//    [[MyTools sharedInstance] fxViewDisAppear];
 //    SSDKPlatformType type;
 //    switch (button.tag) {
 //        case 0://微信好友

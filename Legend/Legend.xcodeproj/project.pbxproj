@@ -40,6 +40,12 @@
 		0F3A6EEE1E850795003D9592 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A6EEC1E850795003D9592 /* NotificationCell.m */; };
 		0F3A6EEF1E850795003D9592 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3A6EED1E850795003D9592 /* NotificationCell.xib */; };
 		0F3A6EF21E850F62003D9592 /* NotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3A6EF11E850F62003D9592 /* NotificationDetailViewController.m */; };
+		0F6410F41F315EE80037764A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6410F31F315EE80037764A /* libicucore.tbd */; };
+		0F6410F61F315F000037764A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6410F51F315F000037764A /* libz.tbd */; };
+		0F6410F81F315F290037764A /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6410F71F315F290037764A /* JavaScriptCore.framework */; };
+		0F6410FA1F315F3F0037764A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6410F91F315F3F0037764A /* libsqlite3.tbd */; };
+		0F6410FE1F317FFC0037764A /* AdverPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6410FC1F317FFC0037764A /* AdverPage.m */; };
+		0F6410FF1F317FFC0037764A /* AdverPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6410FD1F317FFC0037764A /* AdverPage.xib */; };
 		0F6AEBAE1EC40DCD00892B91 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AEBAC1EC40DCD00892B91 /* UserInfoViewController.m */; };
 		0F6AEBB31EC4135300892B91 /* UserInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6AEBB11EC4135300892B91 /* UserInfoTableViewCell.m */; };
 		0F6AEBB41EC4135300892B91 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6AEBB21EC4135300892B91 /* UserInfoTableViewCell.xib */; };
@@ -290,6 +296,13 @@
 		0F3A6EED1E850795003D9592 /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		0F3A6EF01E850F62003D9592 /* NotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationDetailViewController.h; sourceTree = "<group>"; };
 		0F3A6EF11E850F62003D9592 /* NotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationDetailViewController.m; sourceTree = "<group>"; };
+		0F6410F31F315EE80037764A /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		0F6410F51F315F000037764A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0F6410F71F315F290037764A /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		0F6410F91F315F3F0037764A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0F6410FB1F317FFC0037764A /* AdverPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdverPage.h; sourceTree = "<group>"; };
+		0F6410FC1F317FFC0037764A /* AdverPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdverPage.m; sourceTree = "<group>"; };
+		0F6410FD1F317FFC0037764A /* AdverPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdverPage.xib; sourceTree = "<group>"; };
 		0F6AEBAB1EC40DCD00892B91 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		0F6AEBAC1EC40DCD00892B91 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		0F6AEBB01EC4135300892B91 /* UserInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -642,7 +655,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F6410FA1F315F3F0037764A /* libsqlite3.tbd in Frameworks */,
+				0F6410F81F315F290037764A /* JavaScriptCore.framework in Frameworks */,
 				0F9438BA1ED7BEE60093B1F2 /* libstdc++.tbd in Frameworks */,
+				0F6410F61F315F000037764A /* libz.tbd in Frameworks */,
+				0F6410F41F315EE80037764A /* libicucore.tbd in Frameworks */,
 				0F9438B61ED7BEAB0093B1F2 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +769,9 @@
 				0F8423971EDEA6FD00ED09FC /* ProductPropertySelectView.xib */,
 				0F38487A1F302FA3002FFDED /* NewerViewController.h */,
 				0F38487B1F302FA3002FFDED /* NewerViewController.m */,
+				0F6410FB1F317FFC0037764A /* AdverPage.h */,
+				0F6410FC1F317FFC0037764A /* AdverPage.m */,
+				0F6410FD1F317FFC0037764A /* AdverPage.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1245,6 +1265,10 @@
 		0F9438B41ED7BEAB0093B1F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F6410F91F315F3F0037764A /* libsqlite3.tbd */,
+				0F6410F71F315F290037764A /* JavaScriptCore.framework */,
+				0F6410F51F315F000037764A /* libz.tbd */,
+				0F6410F31F315EE80037764A /* libicucore.tbd */,
 				0F9438B91ED7BEE60093B1F2 /* libstdc++.tbd */,
 				0F9438B71ED7BECD0093B1F2 /* libstdc++.6.0.9.tbd */,
 				0F9438B51ED7BEAB0093B1F2 /* MessageUI.framework */,
@@ -1567,6 +1591,7 @@
 				0FC8E2CA1E82760F00086DDB /* CollectionTitleHeaderView.xib in Resources */,
 				0F96BFD61E821E8F00AC22DF /* LaunchScreen.storyboard in Resources */,
 				0F3227471E8A5F10009D4B91 /* Info.plist in Resources */,
+				0F6410FF1F317FFC0037764A /* AdverPage.xib in Resources */,
 				0F81E0A11EC1BCB6004FB259 /* ToCardMyInfoView.xib in Resources */,
 				0F095C5F1ECECADC00EE4CF0 /* AboutUsViewController.xib in Resources */,
 				0F6AEBB41EC4135300892B91 /* UserInfoTableViewCell.xib in Resources */,
@@ -1644,6 +1669,7 @@
 				0F74AC371EC04E45007F3707 /* MineHeaderView.m in Sources */,
 				0F7D270B1EC301B30024284F /* MineOrderFooterView.m in Sources */,
 				0FC8E2C01E82580800086DDB /* MyBaseViewController.m in Sources */,
+				0F6410FE1F317FFC0037764A /* AdverPage.m in Sources */,
 				0F3227201E8A3BC6009D4B91 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				0F7860611EB86DE400C9297F /* SBJsonUTF8Stream.m in Sources */,
 				0F96BFE61E82273D00AC22DF /* UIColor+Theme.m in Sources */,
@@ -1912,6 +1938,18 @@
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/Legend/SDK/Required",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/DingTalkSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/FacebookMessengerSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/KaKaoSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/LineSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/MPShareSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/RenRenSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/Required",
 				);
 				GCC_PREFIX_HEADER = Legend/Legend_PrefixHeader.pch;
 				INFOPLIST_FILE = Legend/Info.plist;
@@ -1920,6 +1958,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/APSocialSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/YiXinSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.my..Legend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1937,6 +1979,18 @@
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/Legend/SDK/Required",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/DingTalkSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/FacebookMessengerSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/KaKaoSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/LineSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/MPShareSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/RenRenSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/Required",
 				);
 				GCC_PREFIX_HEADER = Legend/Legend_PrefixHeader.pch;
 				INFOPLIST_FILE = Legend/Info.plist;
@@ -1945,6 +1999,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Legend/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/APSocialSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/Legend/SDK/ShareSDK/Support/PlatformSDK/YiXinSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.my..Legend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
